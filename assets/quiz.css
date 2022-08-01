@@ -1,0 +1,27 @@
+.choice-container {
+    display: flex;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    font-size: 1.8rem;
+    border: .1rem solid #ff2a6d;
+    background-color: #575267;
+}
+
+.choice-container:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 #d1f7ff;
+    transform: translateY(-0.1rem);
+    transition: 150ms;
+}
+
+.choice-letter {
+    padding: 1.5rem 2.5rem;
+    background-color: #ff2a6d;
+    color: #05d9e8;
+}
+
+.choice-answer {
+    padding: 1.5rem;
+    color: #05d9e8;
+    background-color: #575267;
+}
