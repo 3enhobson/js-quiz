@@ -24,4 +24,15 @@
     padding: 1.5rem;
     color: #05d9e8;
     background-color: #575267;
+    width: 100%;
+}
+
+#timer {
+    color: #05d9e8;
+    font-size: 5rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 10rem;
 }

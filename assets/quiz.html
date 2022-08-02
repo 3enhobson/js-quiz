@@ -1,36 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+
+<head>  
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="quiz.css">
     <title>JS Quiz</title>
 </head>
+
 <body>
-    <div class="container">
-        <div id="game" class="justify-center justify-column">
-            <h2 id="question">Do you know the answer?</h2>
-            <div class="choice-container">
-                <p class="choice-letter">A</p>
-                <p class="choice-answer">blah</p>
-            </div>
-            <div class="choice-container">
-                <p class="choice-letter">B</p>
-                <p class="choice-answer">blah</p>
-            </div>
-            <div class="choice-container">
-                <p class="choice-letter">C</p>
-                <p class="choice-answer">blah</p>
-            </div>
-            <div class="choice-container">
-                <p class="choice-letter">D</p>
-                <p class="choice-answer">blah</p>
+    <p id="timer">
+        Timer: 
+        <span id="seconds"> 0</span>
+    </p>
+    <main>
+        <div class="container">
+            <div id="game" class="justify-center justify-column">
+                <h2 id="question">Do you know the answer?</h2>
+                <div class="choice-container">
+                    <p class="choice-letter">A</p>
+                    <p class="choice-answer" data-number="1">choice 1</p>
+                </div>
+                <div class="choice-container">
+                    <p class="choice-letter">B</p>
+                    <p class="choice-answer" data-number="2">choice 2</p>
+                </div>
+                <div class="choice-container">
+                    <p class="choice-letter">C</p>
+                    <p class="choice-answer" data-number="3">choice 3</p>
+                </div>
+                <div class="choice-container">
+                    <p class="choice-letter">D</p>
+                    <p class="choice-answer" data-number="4">choice 4</p>
+                </div>
             </div>
         </div>
-    </div>
+    </main>
     <script src="quiz.js"></script>
 </body>
+
 </html>
