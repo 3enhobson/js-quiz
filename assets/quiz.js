@@ -6,6 +6,7 @@ var acceptingAnswers = false;
 var score = 0;
 var questionCounter = 0;
 var availableQuestions = [];
+var updatedScore = document.getElementById('score')
 
 
 var questions = [
@@ -44,20 +45,26 @@ var questions = [
 ];
 
 var timerEl = document.querySelector('#seconds');
-var timer = 60; 
+var timer = 10; 
  
-window.onload = () => {
+/*window.onload = () => {
    var timerInterval = setInterval(function() {
         timerEl.textContent = timer;
         timer--;
+
+        if (timer < 0) {
+            clearInterval(timerInterval);
+            return window.location.assign("/end.html");
+        }
+        
    }, 1000) 
-};
+};*/ 
 
 
 
 
 
-var correctBonus = 10;
+var correctBonus = 25;
 var maxQuestions = 4;
 
 startGame = () => {
@@ -69,9 +76,10 @@ startGame = () => {
 
 getNewQuestion = () => {
     if (availableQuestions.length === 0){
-        return window.location.assign("/end.html"); 
+        localStorage.setItem("recentScore", score);
+        return window.location.assign("score.html"); 
     }
-    questionCounter++;
+    questionCounter++;  
     var questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
     question.innerText = currentQuestion.question;
@@ -89,15 +97,29 @@ getNewQuestion = () => {
 choices.forEach(choice => {
     choice.addEventListener("click", e => {
          
+       
+       
         var selectedChoice = e.target;
         var selectedAnswer = selectedChoice.dataset["number"];
        
-          
+        var correctIncorrect = '';
+        if (selectedAnswer == currentQuestion.answer) {
+            correctIncorrect = 'correct';
+        } else if (selectedAnswer !== currentQuestion.answer) {
+            correctIncorrect = 'incorrect'; 
+        }
+        
+        if (correctIncorrect === "correct") {
+            incrementScore(correctBonus); 
+        }
 
-       
-        console.log(selectedAnswer == currentQuestion.answer);
         getNewQuestion();
     });
 }); 
 
-startGame();
+incrementScore = num => {
+    score +=num;
+    updatedScore.innerText = score
+}
+
+startGame(); 
