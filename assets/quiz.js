@@ -9,6 +9,8 @@ var availableQuestions = [];
 var updatedScore = document.getElementById('score')
 
 
+
+
 var questions = [
     {
         question: "Javascript is a/an _______ language.",
