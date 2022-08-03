@@ -7,6 +7,7 @@ var score = 0;
 var questionCounter = 0;
 var availableQuestions = [];
 var updatedScore = document.getElementById('score')
+var subtractTime = document.getElementById('seconds')
 
 
 
@@ -25,7 +26,7 @@ var questions = [
         choice1: "//",
         choice2: "<!--  -->",
         choice3: "/* */",
-        choice4: "A & C",
+        choice4: "Both A & C",
         answer: 4
     },
     {
@@ -47,20 +48,21 @@ var questions = [
 ];
 
 var timerEl = document.querySelector('#seconds');
-var timer = 10; 
+var timer = 40; 
+var wrong = 10;
  
-/*window.onload = () => {
+window.onload = () => {
    var timerInterval = setInterval(function() {
         timerEl.textContent = timer;
         timer--;
 
         if (timer < 0) {
             clearInterval(timerInterval);
-            return window.location.assign("/end.html");
+            return window.location.assign("score.html");
         }
         
    }, 1000) 
-};*/ 
+}; 
 
 
 
@@ -99,8 +101,6 @@ getNewQuestion = () => {
 choices.forEach(choice => {
     choice.addEventListener("click", e => {
          
-       
-       
         var selectedChoice = e.target;
         var selectedAnswer = selectedChoice.dataset["number"];
        
@@ -112,12 +112,20 @@ choices.forEach(choice => {
         }
         
         if (correctIncorrect === "correct") {
-            incrementScore(correctBonus); 
+            incrementScore(correctBonus) 
+        } //Trying to subtract time for wrong answers
+        else if (correctIncorrect === "incorrect") {
+            decreaseTime(wrong)
         }
 
         getNewQuestion();
     });
 }); 
+
+decreaseTime = num => {
+    timer -=num;
+    subtractTime.innerText = timerEl
+}
 
 incrementScore = num => {
     score +=num;
