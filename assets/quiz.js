@@ -124,7 +124,7 @@ choices.forEach(choice => {
 
 decreaseTime = num => {
     timer -=num;
-    subtractTime.innerText = timerEl
+    subtractTime.innerText = timer;
 }
 
 incrementScore = num => {
