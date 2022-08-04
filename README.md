@@ -8,7 +8,7 @@ This challenge really pushed me to my limit. I spent hours on the javascript cat
 
 To start the quiz press the "Play" button. this will take you to a new screen where you will be prompted with a few multiple choice questions. once youre done answering the questions you will be taken to your score page where you will be able to save you score. Once you save your score you will be taken back to the home page and given to option to look at the "High Scores" page to see if youve made the top three high scores.
 
-
+https://3enhobson.github.io/js-quiz/
 
 ![quiz1](assets/images/quiz1.png)
 ![quiz2](assets/images/quiz2.png)
