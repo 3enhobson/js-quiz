@@ -31,7 +31,7 @@ hallOfFame.splice(3)
 
 localStorage.setItem("scoreCard", JSON.stringify(hallOfFame))
 
-window.location.assign('../indez.html')
+window.location.assign('../index.html')
 };
  
 saveScoreBtn.addEventListener('click', function(event){
